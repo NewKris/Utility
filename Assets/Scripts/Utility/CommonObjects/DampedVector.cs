@@ -16,9 +16,16 @@ namespace VirtualDeviants.Utility.CommonObjects
 			_velocity = Vector3.zero;
 		}
 
-		public void Tick(float damping)
+		public Vector3 Tick(float damping)
 		{
-			Current = Vector3.SmoothDamp(Current, Target, ref _velocity, damping);
+			float deltaTime = Time.deltaTime;
+			return Tick(damping, deltaTime);
+		}
+		
+		public Vector3 Tick(float damping, float deltaTime)
+		{
+			Current = Vector3.SmoothDamp(Current, Target, ref _velocity, damping, Mathf.Infinity, deltaTime);
+			return Current;
 		}
 	}
 }

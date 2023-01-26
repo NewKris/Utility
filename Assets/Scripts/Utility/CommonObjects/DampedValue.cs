@@ -17,15 +17,27 @@ namespace VirtualDeviants.Utility.CommonObjects
 			_velocity = 0;
 		}
 
-		public float Tick(float damping, [DefaultValue("Time.DeltaTime")]float deltaTime)
+		public float Tick(float damping)
+		{
+			float deltaTime = Time.deltaTime;
+			return Tick(damping, deltaTime);
+		}
+		
+		public float Tick(float damping, float deltaTime)
 		{
 			Current = Mathf.SmoothDamp(Current, Target, ref _velocity, damping, Mathf.Infinity, deltaTime);
 			return Current;
 		}
 
-		public float TickAngle(float damping, [DefaultValue("Time.DeltaTime")]float deltaTime)
+		public float TickAngle(float damping)
 		{
-			Current = Mathf.SmoothDampAngle(Current, Target, ref _velocity, damping);
+			float deltaTime = Time.deltaTime;
+			return TickAngle(damping, deltaTime);
+		}
+		
+		public float TickAngle(float damping, float deltaTime)
+		{
+			Current = Mathf.SmoothDampAngle(Current, Target, ref _velocity, damping, Mathf.Infinity, deltaTime);
 			return Current;
 		}
 	}
