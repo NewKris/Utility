@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -35,10 +36,13 @@ namespace VirtualDeviants.Utility.CommonBehaviours
             averagePosition *= _invCount;
 
             Vector3 delta = averagePosition - transform.position;
-            Vector3 scale = new Vector3(
-                
+            Vector3 scalar = new Vector3(
+                x: lockXAxis ? 0 : 1,
+                y: lockYAxis ? 0 : 1,
+                z: lockZAxis ? 0 : 1
             );
-            
+
+            delta = Vector3.Scale(delta, scalar);
             transform.position += delta;
         }
 
