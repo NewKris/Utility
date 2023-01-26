@@ -2,6 +2,11 @@ using UnityEngine;
 
 namespace VirtualDeviants.Utility.CommonBehaviours
 {
+    
+    /// <summary>
+    /// Aligns the forward axis with the direction to a target
+    /// </summary>
+    
     [ExecuteInEditMode]
     public class Stare : MonoBehaviour
     {
