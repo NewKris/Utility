@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace VirtualDeviants.Utility.CommonBehaviours
+namespace BaraGames.Utility.CommonBehaviours
 {
 	/// <summary>
 	/// A UI element that follows a GameObject

@@ -1,7 +1,6 @@
-using System;
 using UnityEngine;
 
-namespace VirtualDeviants.Utility.CommonBehaviours
+namespace BaraGames.Utility.CommonBehaviours
 {
     /// <summary>
     /// Makes sure an object is always stuck to the ground.

@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace VirtualDeviants.Utility.CommonGizmos
+namespace BaraGames.Utility.CommonGizmos
 {
 	#if UNITY_EDITOR
 	public class GizmoSphere : MonoBehaviour

@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace VirtualDeviants.Utility.CommonObjects
+namespace BaraGames.Utility.CommonObjects
 {
 	public struct DampedVector
 	{

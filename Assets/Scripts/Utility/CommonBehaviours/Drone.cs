@@ -1,8 +1,8 @@
+using BaraGames.Utility.Attributes;
+using BaraGames.Utility.CommonObjects;
 using UnityEngine;
-using VirtualDeviants.Utility.Attributes;
-using VirtualDeviants.Utility.CommonObjects;
 
-namespace VirtualDeviants.Utility.CommonBehaviours
+namespace BaraGames.Utility.CommonBehaviours
 {
     /// <summary>
     /// Follows a target with soft damping.
@@ -19,7 +19,7 @@ namespace VirtualDeviants.Utility.CommonBehaviours
 
         private void Awake()
         {
-            _position = new DampedVector(transform.position);
+            _position = new DampedVector(target.position + offset);
         }
 
         private void LateUpdate()

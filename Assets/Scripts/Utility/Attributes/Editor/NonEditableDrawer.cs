@@ -1,9 +1,7 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
 using UnityEditor;
+using UnityEngine;
 
-namespace VirtualDeviants.Utility.Attributes.Editor
+namespace BaraGames.Utility.Attributes.Editor
 {
 
     [CustomPropertyDrawer(typeof(NonEditable))]

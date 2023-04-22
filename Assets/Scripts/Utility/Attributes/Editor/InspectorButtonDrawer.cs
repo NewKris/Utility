@@ -4,7 +4,7 @@ using UnityEditor;
 using UnityEngine;
 using Object = UnityEngine.Object;
 
-namespace VirtualDeviants.Utility.Attributes.Editor
+namespace BaraGames.Utility.Attributes.Editor
 {
 	[CustomPropertyDrawer(typeof(InspectorButton))]
 	public class InspectorButtonDrawer : PropertyDrawer

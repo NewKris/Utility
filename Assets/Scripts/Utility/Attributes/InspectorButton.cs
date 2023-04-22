@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace VirtualDeviants.Utility.Attributes
+namespace BaraGames.Utility.Attributes
 {
 	public class InspectorButton : PropertyAttribute
 	{

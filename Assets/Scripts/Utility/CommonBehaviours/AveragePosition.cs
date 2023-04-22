@@ -1,9 +1,8 @@
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-namespace VirtualDeviants.Utility.CommonBehaviours
+namespace BaraGames.Utility.CommonBehaviours
 {
     /// <summary>
     /// Follows the average position of its assigned targets

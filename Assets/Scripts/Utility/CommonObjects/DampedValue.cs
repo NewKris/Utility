@@ -1,7 +1,6 @@
 ﻿using UnityEngine;
-using UnityEngine.Internal;
 
-namespace VirtualDeviants.Utility.CommonObjects
+namespace BaraGames.Utility.CommonObjects
 {
 	public struct DampedValue
 	{

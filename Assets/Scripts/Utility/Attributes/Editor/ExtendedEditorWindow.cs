@@ -1,9 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEditor;
-using UnityEngine;
 
-namespace VirtualDeviants.Utility.Editor
+namespace BaraGames.Utility.Attributes.Editor
 {
     public class ExtendedEditorWindow : EditorWindow
     {
