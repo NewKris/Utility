@@ -1,10 +1,7 @@
 ﻿using UnityEngine;
 
-namespace BaraGames.Utility.CommonGizmos
-{
-	#if UNITY_EDITOR
-	public class GizmoSphere : MonoBehaviour
-	{
+namespace BaraGames.Utility.CommonGizmos {
+	public class GizmoSphere : MonoBehaviour {
 		public Color color = Color.red;
 		public float radius = 0.2f;
 		
@@ -13,26 +10,17 @@ namespace BaraGames.Utility.CommonGizmos
 		public bool alwaysDraw = true;
 		public bool wire = false;
 
-		private void OnDrawGizmos()
-		{
+		private void OnDrawGizmos() {
 			if(!alwaysDraw) return;
-			DrawSphere();
-		}
-
-		private void OnDrawGizmosSelected()
-		{
-			if(alwaysDraw) return;
-			DrawSphere();
-		}
-
-		private void DrawSphere()
-		{
-			Gizmos.color = color;
 			
-			if(wire) Gizmos.DrawWireSphere(transform.position, radius);
-			else Gizmos.DrawSphere(transform.position, radius);
+			HandlesProxy.DrawSphere(transform.position, radius, wire, color);
+		}
+
+		private void OnDrawGizmosSelected() {
+			if(alwaysDraw) return;
+			
+			HandlesProxy.DrawSphere(transform.position, radius, wire, color);
 		}
 		
 	}
-	#endif
 }

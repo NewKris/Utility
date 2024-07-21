@@ -1,11 +1,7 @@
 ﻿using UnityEngine;
 
-namespace BaraGames.Utility.CommonGizmos
-{
-#if UNITY_EDITOR
-	public class GizmoArrow : MonoBehaviour
-	{
-
+namespace BaraGames.Utility.CommonGizmos {
+	public class GizmoArrow : MonoBehaviour {
 		public Color color = Color.red;
 		public float size = 2;
 
@@ -14,31 +10,18 @@ namespace BaraGames.Utility.CommonGizmos
 
 		public bool alwaysDraw;
 
-		private void OnDrawGizmos()
-		{
+		private void OnDrawGizmos() {
 			if(!alwaysDraw) return;
-			DrawArrow();
+
+			Quaternion rotation = local ? transform.rotation : Quaternion.identity;
+			HandlesProxy.DrawArrow(transform.position, direction, rotation, size, color);
 		}
 
-		private void OnDrawGizmosSelected()
-		{
+		private void OnDrawGizmosSelected() {
 			if(alwaysDraw) return;
-			DrawArrow();
-		}
-
-		private void DrawArrow()
-		{
-			UnityEditor.Handles.color = color;
-
-			Quaternion rotation;
-
-			if (local) rotation = Quaternion.LookRotation(transform.TransformDirection(direction), transform.up);
-			else rotation = Quaternion.LookRotation(direction, Vector3.up);
 			
-			UnityEditor.Handles.ArrowHandleCap(0, transform.position, rotation, size, EventType.Repaint);
+			Quaternion rotation = local ? transform.rotation : Quaternion.identity;
+			HandlesProxy.DrawArrow(transform.position, direction, rotation, size, color);
 		}
-
 	}	
-#endif
-
 }

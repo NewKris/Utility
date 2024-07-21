@@ -1,12 +1,7 @@
 ﻿using UnityEngine;
 
-namespace BaraGames.Utility.CommonGizmos
-{
-
-#if UNITY_EDITOR
-	public class GizmoLine : MonoBehaviour
-	{
-
+namespace BaraGames.Utility.CommonGizmos {
+	public class GizmoLine : MonoBehaviour {
 		public Transform start;
 		public Transform end;
 
@@ -22,43 +17,36 @@ namespace BaraGames.Utility.CommonGizmos
 		public bool toArrow = false;
 		public bool fromArrow = false;
 
-		private void OnDrawGizmos()
-		{
+		private void OnDrawGizmos() {
 			if(!alwaysDraw) return;
+			
 			DrawLine();
 		}
 
-		private void OnDrawGizmosSelected()
-		{
+		private void OnDrawGizmosSelected() {
 			if(alwaysDraw) return;
+			
 			DrawLine();
 		}
 
-		private void DrawLine()
-		{
+		private void DrawLine() {
 			if(!start || !end) return;
 			
-			UnityEditor.Handles.color = color;
-			
-			if(dotted) UnityEditor.Handles.DrawDottedLine(start.position, end.position, thickness);
-			else UnityEditor.Handles.DrawLine(start.position, end.position, thickness);
+			HandlesProxy.DrawLine(start.position, end.position, thickness, dotted, color);
 
-			if (toArrow)
-			{
+			if (toArrow) {
 				Vector3 direction = end.position - start.position;
-				Quaternion arrowRotation = Quaternion.LookRotation(direction);
-				UnityEditor.Handles.ArrowHandleCap(0, end.position - direction.normalized * 2, arrowRotation, 2, EventType.Repaint);
+				Vector3 pos = end.position - direction.normalized * 0.5f;
+				
+				HandlesProxy.DrawArrow(pos, direction, Quaternion.identity, 0.5f, color);
 			}
 			
-			if (fromArrow)
-			{
+			if (fromArrow) {
 				Vector3 direction = start.position - end.position;
-				Quaternion arrowRotation = Quaternion.LookRotation(direction);
-				UnityEditor.Handles.ArrowHandleCap(0, start.position - direction.normalized * 2, arrowRotation, 2, EventType.Repaint);
+				Vector3 pos = start.position - direction.normalized * 0.5f;
+				
+				HandlesProxy.DrawArrow(pos, direction, Quaternion.identity, 0.5f, color);
 			}
 		}
-		
-
 	}
-#endif
 }

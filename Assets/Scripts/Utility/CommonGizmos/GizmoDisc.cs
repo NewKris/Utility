@@ -1,11 +1,7 @@
 ﻿using UnityEngine;
 
-namespace BaraGames.Utility.CommonGizmos
-{
-#if UNITY_EDITOR
-	public class GizmoDisc : MonoBehaviour
-	{
-
+namespace BaraGames.Utility.CommonGizmos {
+	public class GizmoDisc : MonoBehaviour {
 		public Color color = Color.white;
 		public float radius = 0.5f;
 
@@ -14,26 +10,16 @@ namespace BaraGames.Utility.CommonGizmos
 		public bool alwaysDraw = true;
 		public bool wire = false;
 
-		private void OnDrawGizmos()
-		{
+		private void OnDrawGizmos() {
 			if(!alwaysDraw) return;
-			DrawDisc();
-		}
-
-		private void OnDrawGizmosSelected()
-		{
-			if(alwaysDraw) return;
-			DrawDisc();
-		}
-
-		private void DrawDisc()
-		{
-			UnityEditor.Handles.color = color;
 			
-			if(wire) UnityEditor.Handles.DrawWireDisc(transform.position, Vector3.up, radius);
-			else UnityEditor.Handles.DrawSolidDisc(transform.position, Vector3.up, radius);
+			HandlesProxy.DrawDisc(transform.position, Vector3.up, radius, wire, color);
 		}
 
+		private void OnDrawGizmosSelected() {
+			if(alwaysDraw) return;
+
+			HandlesProxy.DrawDisc(transform.position, Vector3.up, radius, wire, color);
+		}
 	}
-#endif
 }

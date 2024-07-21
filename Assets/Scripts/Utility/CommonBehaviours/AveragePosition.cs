@@ -2,13 +2,11 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-namespace BaraGames.Utility.CommonBehaviours
-{
+namespace BaraGames.Utility.CommonBehaviours {
     /// <summary>
     /// Follows the average position of its assigned targets
     /// </summary>
-    public class AveragePosition : MonoBehaviour
-    {
+    public class AveragePosition : MonoBehaviour {
         public List<Transform> targets;
         
         [Space]
@@ -18,15 +16,13 @@ namespace BaraGames.Utility.CommonBehaviours
 
         private float _invCount;
 
-        private void Start()
-        {
+        private void Start() {
             if (targets.Count == 0) return;
 
             _invCount = 1f / targets.Count;
         }
 
-        private void LateUpdate()
-        {
+        private void LateUpdate() {
             Vector3 averagePosition = targets.Aggregate(
                 Vector3.zero, 
                 (current, target) => current + target.position
@@ -45,20 +41,20 @@ namespace BaraGames.Utility.CommonBehaviours
             transform.position += delta;
         }
 
-        public void AddTarget(Transform target)
-        {
+        public void AddTarget(Transform target) {
             targets.Add(target);
             _invCount = 1f / targets.Count;
         }
 
-        public void RemoveTarget(Transform target)
-        {
+        public void RemoveTarget(Transform target) {
             targets.Remove(target);
 
-            if (targets.Count == 0)
+            if (targets.Count == 0) {
                 _invCount = 0;
-            else
+            }
+            else {
                 _invCount = 1f / targets.Count;
+            }
         }
 
     }

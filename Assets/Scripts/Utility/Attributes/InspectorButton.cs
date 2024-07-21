@@ -1,17 +1,5 @@
 ﻿using UnityEngine;
 
-namespace BaraGames.Utility.Attributes
-{
-	public class InspectorButton : PropertyAttribute
-	{
-
-		public readonly string buttonName;
-		public readonly string methodName;
-
-		public InspectorButton(string btnName, string targetMethod)
-		{
-			buttonName = btnName;
-			methodName = targetMethod;
-		}
-	}
+namespace BaraGames.Utility.Attributes {
+	public class InspectorButton : PropertyAttribute { }
 }
