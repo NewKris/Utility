@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace BaraGames.Utility.CommonObjects {
+namespace NewKris.Utility.CommonObjects {
 	public struct DampedVector
 	{
 		private Vector3 _velocity;

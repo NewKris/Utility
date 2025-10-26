@@ -1,8 +1,7 @@
-using BaraGames.Utility.Attributes;
-using BaraGames.Utility.CommonObjects;
+using NewKris.Utility.CommonObjects;
 using UnityEngine;
 
-namespace BaraGames.Utility.CommonBehaviours {
+namespace NewKris.Utility.CommonBehaviours {
     /// <summary>
     /// Follows a target with soft damping.
     /// </summary>
@@ -13,11 +12,14 @@ namespace BaraGames.Utility.CommonBehaviours {
         private DampedVector _position;
 
         private void Awake() {
-            _position = new DampedVector(target.position);
+            Vector3 startPosition = target ? target.position : transform.position;
+            _position = new DampedVector(startPosition);
         }
 
         private void LateUpdate() {
-            if (!target) return;
+            if (!target) {
+                return;
+            }
             
             _position.Target = target.position;
             transform.position = _position.Tick(damping);

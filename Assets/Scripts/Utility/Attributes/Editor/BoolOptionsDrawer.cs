@@ -1,7 +1,7 @@
 ﻿using UnityEditor;
 using UnityEngine;
 
-namespace BaraGames.Utility.Attributes.Editor {
+namespace NewKris.Utility.Attributes.Editor {
 	[CustomPropertyDrawer(typeof(BoolOptions))]
 	public class BoolOptionsDrawer : PropertyDrawer {
 		public override void OnGUI(Rect position, SerializedProperty property, GUIContent label) {

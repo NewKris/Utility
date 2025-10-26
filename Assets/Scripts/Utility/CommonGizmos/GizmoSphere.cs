@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace BaraGames.Utility.CommonGizmos {
+namespace NewKris.Utility.CommonGizmos {
 	public class GizmoSphere : MonoBehaviour {
 		public Color color = Color.red;
 		public float radius = 0.2f;

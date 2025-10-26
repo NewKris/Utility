@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace BaraGames.Utility.Attributes {
+namespace NewKris.Utility.Attributes {
 	public class BoolOptions : PropertyAttribute {
 		public readonly string inspectorName;
 		public readonly string trueOption;

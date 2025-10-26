@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace BaraGames.Utility.CommonGizmos {
+namespace NewKris.Utility.CommonGizmos {
 	public class GizmoLine : MonoBehaviour {
 		public Transform start;
 		public Transform end;
