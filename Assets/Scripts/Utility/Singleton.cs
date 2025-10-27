@@ -9,7 +9,7 @@ namespace NewKris.Utility {
                 return true;
             }
 
-            Object.Destroy(instance);
+            Object.Destroy(instance.gameObject);
             return false;
         }
 
